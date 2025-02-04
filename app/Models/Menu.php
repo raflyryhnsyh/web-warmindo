@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Container\Attributes\DB;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
@@ -16,6 +17,12 @@ class Menu extends Model
     protected $fillable = [
         'menu_name',
         'price',
-        'description'
+        'id_category',
+        'description',
+        'status'
     ];
+
+    public function category() {
+        return $this->belongsTo(Categories::class, 'id_category');
+    }
 }

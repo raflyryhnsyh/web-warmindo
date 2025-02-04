@@ -26,12 +26,6 @@ class AuthenticatedSessionController extends Controller
     {
         $request->authenticate();
         $request->session()->regenerate();
-
-        $user = Auth::user(); // ngambil data user yang sedang login
-
-        if ($user->role === 'admin') { // cek kalo rolenya admin tampilin dashboard admin
-            return redirect()->route('dashboard-admin');
-        }
         
         return redirect()->route('dashboard'); // kalo user biasa tampilin dashboard
     }

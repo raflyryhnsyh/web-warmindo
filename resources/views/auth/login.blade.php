@@ -6,7 +6,7 @@
         @csrf
 
         <!-- Email Address -->
-        <div>
+        <div class="bg-red-400">
             <x-input-label for="login" :value="__('Email/Username')" />
             <x-text-input id="login" class="block mt-1 w-full" type="text" name="login" :value="old('login')" required
                 autofocus />
